@@ -5,9 +5,26 @@ De grunnleggende filene som trengs for å lage et raylib prosjekt. Prosjektet er
 ````
 1  mkdir build && cd build
 
-2  cmake ..
+2  cmake .. -Wno-dev
 
 3  cmake --build .
 ````
 
 Dette skal compile programmet og legge en .exe fil under ./build/debug
+
+Flytt *.exe filen til source dir - eks. _2D-Platformer-Engine_
+
+
+## Nye mapper/dir
+Legg til nye mapper som inneholder *.cpp eller *.h filer i _CMakeList.txt_ på denne måten:
+````
+$${\color{include_directories}Blue}$$(
+    ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/src
+)
+file(GLOB all_SRCS
+    "${PROJECT_SOURCE_DIR}/include/*.h"
+    "${PROJECT_SOURCE_DIR}/src/*.cpp"
+)
+
+````
