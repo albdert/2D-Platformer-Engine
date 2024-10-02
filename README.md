@@ -18,13 +18,16 @@ Flytt *.exe filen til source dir - eks. _2D-Platformer-Engine_
 ## Nye mapper/dir
 Legg til nye mapper som inneholder *.cpp eller *.h filer i _CMakeList.txt_ på denne måten:
 ````
-$${\color{include_directories}Blue}$$(
-    ${PROJECT_SOURCE_DIR}/include
-    ${PROJECT_SOURCE_DIR}/src
+include_directories(
+    "${PROJECT_SOURCE_DIR}/include"
+
+    "${PROJECT_SOURCE_DIR}/include/NY-MAPPE"
 )
 file(GLOB all_SRCS
     "${PROJECT_SOURCE_DIR}/include/*.h"
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
+
+    "${PROJECT_SOURCE_DIR}/src/NY-MAPPE/*.cpp"
 )
 
 ````
